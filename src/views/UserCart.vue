@@ -249,10 +249,18 @@ export default {
       this.$http.post(url, { data: order })
         .then((res) => {
           console.log(res)
-          this.emitter.emit('push-message', {
-            style: 'success',
-            title: '已建立訂單'
-          })
+          if (res.data.success) {
+            this.emitter.emit('push-message', {
+              style: 'success',
+              title: '已建立訂單'
+            })
+          } else {
+            this.emitter.emit('push-message', {
+              style: 'danger',
+              title: '已建立訂單',
+              content: res.data.message
+            })
+          }
         })
     }
   },
