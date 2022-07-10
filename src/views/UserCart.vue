@@ -60,6 +60,9 @@
     </tr>
   </tbody>
 </table>
+  <div class="text-start">
+    <button type="button" class="btn btn-outline-danger" @click="clearCart">清空購物車</button>
+  </div>
   <div class="text-end">
     總計：{{$filters.currency(cart.final_total)}}
     </div>
@@ -211,6 +214,19 @@ export default {
             this.emitter.emit('push-message', {
               style: 'success',
               title: '已移除購物車內商品'
+            })
+            this.getCart()
+          }
+        })
+    },
+    clearCart () {
+      const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/carts`
+      this.$http.delete(api)
+        .then((res) => {
+          if (res.data.success) {
+            this.emitter.emit('push-message', {
+              style: 'success',
+              title: '購物車已清空'
             })
             this.getCart()
           }
