@@ -1,5 +1,4 @@
 <template>
-<div class="container-fluid">
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" refs="marquee">
   <div class="carousel-inner text-white">
     <div class="carousel-item active">
@@ -12,7 +11,6 @@
       ！最新消息！
     </div>
   </div>
-</div>
 </div>
 </template>
 
