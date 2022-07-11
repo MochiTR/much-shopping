@@ -1,8 +1,11 @@
 <template>
   <!-- <router-view/> -->
+  <div class="container-fluid bg-dark">
+  <LoadingAnimation :active="loading"></LoadingAnimation>
   <HomeNavbar></HomeNavbar>
-    <carousel></carousel>
-
+    <carousel class="mb-3"></carousel>
+    <HomeMarquee></HomeMarquee>
+    </div>
 </template>
 
 <style lang="scss">
@@ -12,10 +15,20 @@
 <script>
 import carousel from './components/HomeCarousel'
 import HomeNavbar from './components/HomeNavbar'
+import HomeMarquee from './components/HomeMarquee'
 export default {
   components: {
     carousel,
-    HomeNavbar
+    HomeNavbar,
+    HomeMarquee
+  },
+  data () {
+    return {
+      loading: true
+    }
+  },
+  mounted () {
+    this.loading = false
   }
 }
 </script>
