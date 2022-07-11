@@ -1,4 +1,5 @@
 <template>
+<LoadingAnimation :active="loading"></LoadingAnimation>
 <div class="container">
 <div class="my-3">
 <div class="row">
@@ -24,6 +25,7 @@ export default {
   data () {
     return {
       product: [],
+      loading: false,
       status: {
         loadingItem: ''
       }
@@ -47,8 +49,10 @@ export default {
   created () {
     const seed = this.$route.params.productId
     const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/product/${seed}`
+    this.loading = true
     this.$http.get(api)
       .then((res) => {
+        this.loading = false
         this.product = res.data.product
       })
   }

@@ -19,7 +19,7 @@
             <div class="card-body"><h2 class="fs-3">{{notebook.title}}</h2>
             <p>
               {{notebook.description}}<a href="#" class="text-muted">...More</a><br>
-              <button type="button" class="btn btn-primary">加入購物車</button>
+              <button type="button" class="btn btn-primary" @click="getDetail(notebook.id)">加入購物車</button>
             </p></div>
           </div>
         </div>
@@ -57,7 +57,7 @@
             <div class="card-body"><h2 class="fs-3">{{pen.title}}</h2>
             <p>
               {{pen.description}}<a href="#" class="text-muted">...More</a><br>
-              <button type="button" class="btn btn-primary">加入購物車</button>
+              <button type="button" class="btn btn-primary" @click="getDetail(pen.id)">加入購物車</button>
             </p></div>
           </div>
         </div>
@@ -81,7 +81,7 @@
             <div class="card-body"><h2 class="fs-3">{{sketchbook.title}}</h2>
             <p>
               {{sketchbook.description}}<a href="#" class="text-muted">...More</a><br>
-              <button type="button" class="btn btn-primary">加入購物車</button>
+              <button type="button" class="btn btn-primary" @click="getDetail(sketchbook.id)">加入購物車</button>
             </p></div>
           </div>
         </div>
@@ -105,7 +105,7 @@
             <div class="card-body"><h2 class="fs-3">{{other.title}}</h2>
             <p>
               {{other.description}}<a href="#" class="text-muted">...More</a><br>
-              <button type="button" class="btn btn-primary">加入購物車</button>
+              <button type="button" class="btn btn-primary" @click="getDetail(other.id)">加入購物車</button>
             </p></div>
           </div>
         </div>
@@ -147,6 +147,9 @@ export default {
             console.log(this.others)
           }
         })
+    },
+    getDetail (id) {
+      this.$router.push(`/user/product/${id}`)
     },
     toTarget (tag) {
       const top = tag.offsetTop
