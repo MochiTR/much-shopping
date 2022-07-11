@@ -1,10 +1,14 @@
 <template>
+<div class="mb-3">
+<button class="btn btn-primary me-3">NoteBooks</button><button class="btn btn-primary me-3">Pens</button><button class="btn btn-primary me-3">SketchBooks</button><button class="btn btn-primary me-3">Others</button>
+</div>
+<div id="NoteBook" ref="NoteBook">
 <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item active" aria-current="page">NoteBook</li>
-          <li class="breadcrumb-item"><a href="#">Pen</a></li>
-          <li class="breadcrumb-item"><a href="#">Sketchbook</a></li>
-          <li class="breadcrumb-item"><a href="#">Others</a></li>
+          <li class="breadcrumb-item"><a href="#" @click.prevent="toTarget($refs.Pen)">Pen</a></li>
+          <li class="breadcrumb-item"><a href="#" @click.prevent="toTarget($refs.SketchBook)">Sketchbook</a></li>
+          <li class="breadcrumb-item"><a href="#" @click.prevent="toTarget($refs.Other)">Others</a></li>
         </ol>
       </nav>
       <div class="row">
@@ -33,13 +37,15 @@
         <div class="col-3"></div>
         <div class="col-3"></div> -->
       </div>
+</div>
 
+<div id="Pen" ref="Pen">
 <nav aria-label="breadcrumb">
         <ol class="breadcrumb mt-3">
-          <li class="breadcrumb-item"><a href="#">NoteBook</a></li>
+          <li class="breadcrumb-item"><a href="#" @click.prevent="toTarget($refs.NoteBook)">NoteBook</a></li>
           <li class="breadcrumb-item active" aria-current="page">Pen</li>
-          <li class="breadcrumb-item"><a href="#">Sketchbook</a></li>
-          <li class="breadcrumb-item"><a href="#">Others</a></li>
+          <li class="breadcrumb-item"><a href="#" @click.prevent="toTarget($refs.SketchBook)">Sketchbook</a></li>
+          <li class="breadcrumb-item"><a href="#" @click.prevent="toTarget($refs.Other)">Others</a></li>
         </ol>
       </nav>
 
@@ -56,13 +62,15 @@
           </div>
         </div>
         </div>
+</div>
 
+<div id="SketchBook" ref="SketchBook">
 <nav aria-label="breadcrumb">
         <ol class="breadcrumb mt-3">
-          <li class="breadcrumb-item"><a href="#">NoteBook</a></li>
-          <li class="breadcrumb-item"><a href="#">Pen</a></li>
+          <li class="breadcrumb-item"><a href="#" @click.prevent="toTarget($refs.NoteBook)">NoteBook</a></li>
+          <li class="breadcrumb-item"><a href="#" @click.prevent="toTarget($refs.Pen)">Pen</a></li>
           <li class="breadcrumb-item active" aria-current="page">Sketchbook</li>
-          <li class="breadcrumb-item"><a href="#">Others</a></li>
+          <li class="breadcrumb-item"><a href="#" @click.prevent="toTarget($refs.Other)">Others</a></li>
         </ol>
       </nav>
       <div class="row">
@@ -78,12 +86,14 @@
           </div>
         </div>
         </div>
+</div>
 
+<div id="Other" ref="Other">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb mt-3">
-          <li class="breadcrumb-item"><a href="#">NoteBook</a></li>
-          <li class="breadcrumb-item"><a href="#">Pen</a></li>
-          <li class="breadcrumb-item"><a href="#">SketchBook</a></li>
+          <li class="breadcrumb-item"><a href="#" @click.prevent="toTarget($refs.NoteBook)">NoteBook</a></li>
+          <li class="breadcrumb-item"><a href="#" @click.prevent="toTarget($refs.Pen)">Pen</a></li>
+          <li class="breadcrumb-item"><a href="#" @click.prevent="toTarget($refs.SketchBook)">SketchBook</a></li>
           <li class="breadcrumb-item active" aria-current="page">Others</li>
         </ol>
       </nav>
@@ -98,6 +108,7 @@
               <button type="button" class="btn btn-primary">加入購物車</button>
             </p></div>
           </div>
+        </div>
         </div>
         </div>
 </template>
@@ -136,6 +147,10 @@ export default {
             console.log(this.others)
           }
         })
+    },
+    toTarget (tag) {
+      const top = tag.offsetTop
+      window.scrollTo(0, top)
     }
   },
   created () {
