@@ -20,7 +20,7 @@
           <a class="nav-link" href="#">◆ Contact ◆</a>
         </li>
         <li class="nav-item ms-auto">
-          <a class="nav-link" href="#">◆ Login ◆</a>
+          <a class="nav-link" href="#" @click.prevent="toLogin">◆ Login ◆</a>
         </li>
       </ul>
     </div>
@@ -31,17 +31,8 @@
 <script>
 export default {
   methods: {
-    logout () {
-      const api = `${process.env.VUE_APP_API}logout`
-      this.$http.post(api)
-        .then((res) => {
-          if (res.data.success) {
-            this.$router.push('/login')
-          }
-        })
-    },
-    coupon () {
-      this.$router.push('/dashboard/coupons')
+    toLogin () {
+      this.$router.push('/login')
     }
   }
 }
