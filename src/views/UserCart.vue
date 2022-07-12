@@ -281,6 +281,7 @@ export default {
   created () {
     this.getProductions()
     this.getCart()
+    window.scrollTo(0, 0)
   }
 }
 </script>

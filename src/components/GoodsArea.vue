@@ -24,9 +24,9 @@
           <li class="breadcrumb-item"><a href="#" @click.prevent="toTarget($refs.Other)" class="text-white text-decoration-none">Others</a></li>
         </ol>
       </nav>
-      <div class="row row-cols-md-4">
+      <div class="row row-cols-md-4 text-white">
         <div class="col" v-for="notebook in notebooks" :key="notebook.id">
-          <div class="card">
+          <div class="card card_bg">
             <!-- <div class="card-title">NoteBook A</div> -->
             <img :src="notebook.imageUrl" style="object-fit:cover;object-position:center center;height:300px;">
             <div class="card-body"><h2 class="fs-3">{{notebook.title}}</h2>
@@ -64,9 +64,9 @@
         </ol>
       </nav>
 
-      <div class="row row-cols-md-4">
+      <div class="row row-cols-md-4 text-white">
         <div class="col" v-for="pen in pens" :key="pen.id">
-          <div class="card">
+          <div class="card card_bg">
             <!-- <div class="card-title">NoteBook A</div> -->
             <img :src="pen.imageUrl" style="object-fit:cover;object-position:center center;height:300px;">
             <div class="card-body"><h2 class="fs-3">{{pen.title}}</h2>
@@ -90,9 +90,9 @@
           <li class="breadcrumb-item"><a href="#" @click.prevent="toTarget($refs.Other)" class="text-white text-decoration-none">Others</a></li>
         </ol>
       </nav>
-      <div class="row row-cols-md-4">
+      <div class="row row-cols-md-4 text-white">
         <div class="col" v-for="sketchbook in sketchbooks" :key="sketchbook.id">
-          <div class="card">
+          <div class="card card_bg">
             <!-- <div class="card-title">sketchbook A</div> -->
             <img :src="sketchbook.imageUrl" style="object-fit:cover;object-position:center center;height:300px;">
             <div class="card-body"><h2 class="fs-3">{{sketchbook.title}}</h2>
@@ -107,7 +107,7 @@
         </div>
 </div>
 
-<div id="Other" ref="Other">
+<div id="Other" ref="Other" class="pb-4">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb mt-3">
           <li class="breadcrumb-item"><a href="#" @click.prevent="toTarget($refs.NoteBook)" class="text-white text-decoration-none">NoteBook</a></li>
@@ -116,9 +116,9 @@
           <li class="breadcrumb-item active" aria-current="page">Others</li>
         </ol>
       </nav>
-      <div class="row row-cols-md-4">
+      <div class="row row-cols-md-4 text-white">
         <div class="col" v-for="other in others" :key="other.id">
-          <div class="card">
+          <div class="card card_bg">
             <!-- <div class="card-title">other A</div> -->
             <img :src="other.imageUrl" style="object-fit:cover;object-position:center center;height:300px;">
             <div class="card-body"><h2 class="fs-3">{{other.title}}</h2>
@@ -177,7 +177,7 @@ export default {
     },
     toTarget (tag) {
       const top = tag.offsetTop
-      window.scrollTo(0, top)
+      window.scrollTo(0, top - 56)
     },
     addCart (id) {
       this.status.loadingItem = id
