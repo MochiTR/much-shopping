@@ -2,9 +2,9 @@
 <div class="container">
    <LoadingAnimation :active="loading"></LoadingAnimation>
     <div class="text-end">
-        <button class="btn btn-primary" @click="openModal">新增</button>
+        <button class="btn btn-secondary" @click="openModal">新增</button>
     </div>
-<table class="table mt-4">
+<table class="table mt-4 text-white">
   <thead>
     <tr>
       <th width="120">分類</th>
@@ -33,7 +33,7 @@
       </td>
       <td>
         <div class="btn-group">
-          <button class="btn btn-outline-primary btn-sm" @click="editProduct(item)">編輯</button>
+          <button class="btn btn-outline-secondary btn-sm" @click="editProduct(item)">編輯</button>
           <button class="btn btn-outline-danger btn-sm" @click="deleteProduct(item)">刪除</button>
         </div>
       </td>

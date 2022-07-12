@@ -1,12 +1,13 @@
 <template>
-  <div>
+  <div class="container vh-100">
     <LoadingAnimation :active="loading"></LoadingAnimation>
     <div class="text-end mt-4">
-      <button class="btn btn-primary" @click="openCouponModal(true)">
+      <button class="btn btn-secondary" @click="openCouponModal(true)">
         建立新的優惠券
       </button>
     </div>
-    <table class="table mt-4">
+    <div class="overflow-auto">
+    <table class="table mt-4 text-white text-nowrap ">
       <thead>
       <tr>
         <th>名稱</th>
@@ -27,7 +28,7 @@
         </td>
         <td>
           <div class="btn-group">
-            <button class="btn btn-outline-primary btn-sm"
+            <button class="btn btn-outline-secondary btn-sm"
                     @click="openCouponModal(false, item)"
             >編輯</button>
             <button class="btn btn-outline-danger btn-sm"
@@ -38,6 +39,7 @@
       </tr>
       </tbody>
     </table>
+    </div>
     <couponModal :coupon="tempCoupon" ref="couponModal"
     @update-coupon="updateCoupon"/>
   </div>
