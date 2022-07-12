@@ -1,7 +1,7 @@
 <template>
-<div class="container text-white h-100" style="margin-top:58px">
+<div class="container text-white" style="margin-top:58px">
 <LoadingAnimation :active="loading"></LoadingAnimation>
-<div class="row row-cols-1 justify-content-center">
+<div class="row row-cols-1 justify-content-center vh-100">
     <!-- <div class="col-md-8">
 <table class="table mt-4 text-white">
   <thead>
@@ -32,7 +32,8 @@
   </tbody>
 </table>
 </div> -->
-<div class="col overflow-auto" v-if="cart.carts">
+<div class="col" v-if="cart.carts">
+<div class="overflow-auto">
     <table class="table mt-4 text-white text-nowrap">
   <thead>
     <tr>
@@ -64,6 +65,7 @@
     </tr>
   </tbody>
 </table>
+</div>
   <div class="text-start">
     <button type="button" class="btn btn-outline-danger" @click="clearCart">清空購物車</button>
   </div>

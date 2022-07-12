@@ -1,5 +1,5 @@
 <template>
-<div class="container-fluid bg-dark">
+<div class="container-fluid bg-dark" style="margin-top:56px">
   <LoadingAnimation :active="loading"></LoadingAnimation>
     <carousel class="mb-3"></carousel>
     <HomeMarquee class="mb-3"></HomeMarquee>
