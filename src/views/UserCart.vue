@@ -41,6 +41,7 @@
       <th width="240">品名</th>
       <th width="150">數量</th>
       <th width="150">單價</th>
+      <th>備註</th>
       <th></th>
     </tr>
   </thead>
@@ -59,7 +60,10 @@
       <td>
        {{$filters.currency(cart.final_total)}}
       </td>
-            <td>
+      <td>
+        <textarea class="form-control" placeholder="輸入備註" id="floatingTextarea2" style="height:150px;resize:none;"></textarea>
+      </td>
+      <td>
       <button type="button" class="btn btn-outline-danger" @click.prevent="deleteCart(cart)"><i class="bi bi-trash3-fill"></i></button>
       </td>
     </tr>
