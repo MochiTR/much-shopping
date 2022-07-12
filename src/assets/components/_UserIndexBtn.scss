@@ -1,0 +1,9 @@
+.btn_anchor {
+    background-image:url('https://images.unsplash.com/photo-1489549132488-d00b7eee80f1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80');
+    background-position: center center;
+    background-size: cover;
+    border:1px solid gray;
+    &:hover {
+        border-color:rgb(48, 48, 54)
+    }
+}

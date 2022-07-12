@@ -1,25 +1,38 @@
 <template>
-<div class="mb-3">
-<button class="btn btn-primary me-3">NoteBooks</button><button class="btn btn-primary me-3">Pens</button><button class="btn btn-primary me-3">SketchBooks</button><button class="btn btn-primary me-3">Others</button>
+<div class="mb-3 text-center">
+  <div class="row row-cols-md-4 gy-4">
+    <div class="col">
+      <button class="btn btn-primary btn_anchor w-100 w-md-75 py-3" @click.prevent="toTarget($refs.NoteBook)">NoteBooks</button>
+      </div>
+       <div class="col">
+      <button class="btn btn-primary btn_anchor w-100 w-md-75 py-3" @click.prevent="toTarget($refs.Pen)">Pens</button>
+      </div>
+       <div class="col">
+      <button class="btn btn-primary btn_anchor w-100 w-md-75 py-3" @click.prevent="toTarget($refs.SketchBook)">SketchBooks</button>
+      </div>
+       <div class="col">
+      <button class="btn btn-primary btn_anchor w-100 w-md-75 py-3" @click.prevent="toTarget($refs.Other)">Others</button>
+      </div>
+  </div>
 </div>
 <div id="NoteBook" ref="NoteBook">
 <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item active" aria-current="page">NoteBook</li>
-          <li class="breadcrumb-item"><a href="#" @click.prevent="toTarget($refs.Pen)">Pen</a></li>
-          <li class="breadcrumb-item"><a href="#" @click.prevent="toTarget($refs.SketchBook)">Sketchbook</a></li>
-          <li class="breadcrumb-item"><a href="#" @click.prevent="toTarget($refs.Other)">Others</a></li>
+          <li class="breadcrumb-item"><a href="#" @click.prevent="toTarget($refs.Pen)" class="text-white text-decoration-none">Pen</a></li>
+          <li class="breadcrumb-item"><a href="#" @click.prevent="toTarget($refs.SketchBook)" class="text-white text-decoration-none">Sketchbook</a></li>
+          <li class="breadcrumb-item"><a href="#" @click.prevent="toTarget($refs.Other)" class="text-white text-decoration-none">Others</a></li>
         </ol>
       </nav>
-      <div class="row">
-        <div class="col-2" v-for="notebook in notebooks" :key="notebook.id">
+      <div class="row row-cols-md-4">
+        <div class="col" v-for="notebook in notebooks" :key="notebook.id">
           <div class="card">
             <!-- <div class="card-title">NoteBook A</div> -->
             <img :src="notebook.imageUrl" style="object-fit:cover;object-position:center center;height:300px;">
             <div class="card-body"><h2 class="fs-3">{{notebook.title}}</h2>
             <p>
               {{notebook.description}}<a href="#" class="text-muted" @click.prevent="getDetail(notebook.id)">...More</a><br>
-              <button type="button" class="btn btn-primary">加入購物車</button>
+              <button type="button" class="btn btn-secondary">加入購物車</button>
             </p></div>
           </div>
         </div>
@@ -42,22 +55,22 @@
 <div id="Pen" ref="Pen">
 <nav aria-label="breadcrumb">
         <ol class="breadcrumb mt-3">
-          <li class="breadcrumb-item"><a href="#" @click.prevent="toTarget($refs.NoteBook)">NoteBook</a></li>
+          <li class="breadcrumb-item"><a href="#" @click.prevent="toTarget($refs.NoteBook)" class="text-white text-decoration-none">NoteBook</a></li>
           <li class="breadcrumb-item active" aria-current="page">Pen</li>
-          <li class="breadcrumb-item"><a href="#" @click.prevent="toTarget($refs.SketchBook)">Sketchbook</a></li>
-          <li class="breadcrumb-item"><a href="#" @click.prevent="toTarget($refs.Other)">Others</a></li>
+          <li class="breadcrumb-item"><a href="#" @click.prevent="toTarget($refs.SketchBook)" class="text-white text-decoration-none">Sketchbook</a></li>
+          <li class="breadcrumb-item"><a href="#" @click.prevent="toTarget($refs.Other)" class="text-white text-decoration-none">Others</a></li>
         </ol>
       </nav>
 
-      <div class="row">
-        <div class="col-2" v-for="pen in pens" :key="pen.id">
+      <div class="row row-cols-md-4">
+        <div class="col" v-for="pen in pens" :key="pen.id">
           <div class="card">
             <!-- <div class="card-title">NoteBook A</div> -->
             <img :src="pen.imageUrl" style="object-fit:cover;object-position:center center;height:300px;">
             <div class="card-body"><h2 class="fs-3">{{pen.title}}</h2>
             <p>
               {{pen.description}}<a href="#" class="text-muted" @click.prevent="getDetail(pen.id)">...More</a><br>
-              <button type="button" class="btn btn-primary">加入購物車</button>
+              <button type="button" class="btn btn-secondary">加入購物車</button>
             </p></div>
           </div>
         </div>
@@ -67,21 +80,21 @@
 <div id="SketchBook" ref="SketchBook">
 <nav aria-label="breadcrumb">
         <ol class="breadcrumb mt-3">
-          <li class="breadcrumb-item"><a href="#" @click.prevent="toTarget($refs.NoteBook)">NoteBook</a></li>
-          <li class="breadcrumb-item"><a href="#" @click.prevent="toTarget($refs.Pen)">Pen</a></li>
+          <li class="breadcrumb-item"><a href="#" @click.prevent="toTarget($refs.NoteBook)" class="text-white text-decoration-none">NoteBook</a></li>
+          <li class="breadcrumb-item"><a href="#" @click.prevent="toTarget($refs.Pen)" class="text-white text-decoration-none">Pen</a></li>
           <li class="breadcrumb-item active" aria-current="page">Sketchbook</li>
-          <li class="breadcrumb-item"><a href="#" @click.prevent="toTarget($refs.Other)">Others</a></li>
+          <li class="breadcrumb-item"><a href="#" @click.prevent="toTarget($refs.Other)" class="text-white text-decoration-none">Others</a></li>
         </ol>
       </nav>
-      <div class="row">
-        <div class="col-2" v-for="sketchbook in sketchbooks" :key="sketchbook.id">
+      <div class="row row-cols-md-4">
+        <div class="col" v-for="sketchbook in sketchbooks" :key="sketchbook.id">
           <div class="card">
             <!-- <div class="card-title">sketchbook A</div> -->
             <img :src="sketchbook.imageUrl" style="object-fit:cover;object-position:center center;height:300px;">
             <div class="card-body"><h2 class="fs-3">{{sketchbook.title}}</h2>
             <p>
               {{sketchbook.description}}<a href="#" class="text-muted" @click.prevent="getDetail(sketchbook.id)">...More</a><br>
-              <button type="button" class="btn btn-primary">加入購物車</button>
+              <button type="button" class="btn btn-secondary">加入購物車</button>
             </p></div>
           </div>
         </div>
@@ -91,21 +104,21 @@
 <div id="Other" ref="Other">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb mt-3">
-          <li class="breadcrumb-item"><a href="#" @click.prevent="toTarget($refs.NoteBook)">NoteBook</a></li>
-          <li class="breadcrumb-item"><a href="#" @click.prevent="toTarget($refs.Pen)">Pen</a></li>
-          <li class="breadcrumb-item"><a href="#" @click.prevent="toTarget($refs.SketchBook)">SketchBook</a></li>
+          <li class="breadcrumb-item"><a href="#" @click.prevent="toTarget($refs.NoteBook)" class="text-white text-decoration-none">NoteBook</a></li>
+          <li class="breadcrumb-item"><a href="#" @click.prevent="toTarget($refs.Pen)" class="text-white text-decoration-none">Pen</a></li>
+          <li class="breadcrumb-item"><a href="#" @click.prevent="toTarget($refs.SketchBook)" class="text-white text-decoration-none">SketchBook</a></li>
           <li class="breadcrumb-item active" aria-current="page">Others</li>
         </ol>
       </nav>
-      <div class="row">
-        <div class="col-2" v-for="other in others" :key="other.id">
+      <div class="row row-cols-md-4">
+        <div class="col" v-for="other in others" :key="other.id">
           <div class="card">
             <!-- <div class="card-title">other A</div> -->
             <img :src="other.imageUrl" style="object-fit:cover;object-position:center center;height:300px;">
             <div class="card-body"><h2 class="fs-3">{{other.title}}</h2>
             <p>
               {{other.description}}<a href="#" class="text-muted" @click.prevent="getDetail(other.id)">...More</a><br>
-              <button type="button" class="btn btn-primary">加入購物車</button>
+              <button type="button" class="btn btn-secondary">加入購物車</button>
             </p></div>
           </div>
         </div>
