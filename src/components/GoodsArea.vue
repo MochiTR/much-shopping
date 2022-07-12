@@ -1,6 +1,6 @@
 <template>
 <div class="mb-3 text-center">
-  <div class="row row-cols-md-4 gy-4">
+  <div class="row py-4 row-cols-md-4 gy-4">
     <div class="col">
       <button class="btn btn-primary btn_anchor w-100 w-md-75 py-3" @click.prevent="toTarget($refs.NoteBook)">NoteBooks</button>
       </div>
@@ -25,7 +25,7 @@
         </ol>
       </nav>
       <div class="row row-cols-md-4 text-white">
-        <div class="col" v-for="notebook in notebooks" :key="notebook.id">
+        <div class="col py-4" v-for="notebook in notebooks" :key="notebook.id">
           <div class="card card_bg">
             <!-- <div class="card-title">NoteBook A</div> -->
             <img :src="notebook.imageUrl" style="object-fit:cover;object-position:center center;height:300px;">
@@ -65,7 +65,7 @@
       </nav>
 
       <div class="row row-cols-md-4 text-white">
-        <div class="col" v-for="pen in pens" :key="pen.id">
+        <div class="col py-4" v-for="pen in pens" :key="pen.id">
           <div class="card card_bg">
             <!-- <div class="card-title">NoteBook A</div> -->
             <img :src="pen.imageUrl" style="object-fit:cover;object-position:center center;height:300px;">
@@ -91,7 +91,7 @@
         </ol>
       </nav>
       <div class="row row-cols-md-4 text-white">
-        <div class="col" v-for="sketchbook in sketchbooks" :key="sketchbook.id">
+        <div class="col py-4" v-for="sketchbook in sketchbooks" :key="sketchbook.id">
           <div class="card card_bg">
             <!-- <div class="card-title">sketchbook A</div> -->
             <img :src="sketchbook.imageUrl" style="object-fit:cover;object-position:center center;height:300px;">
@@ -117,7 +117,7 @@
         </ol>
       </nav>
       <div class="row row-cols-md-4 text-white">
-        <div class="col" v-for="other in others" :key="other.id">
+        <div class="col py-4" v-for="other in others" :key="other.id">
           <div class="card card_bg">
             <!-- <div class="card-title">other A</div> -->
             <img :src="other.imageUrl" style="object-fit:cover;object-position:center center;height:300px;">

@@ -91,6 +91,7 @@ export default {
         this.loading = false
         this.product = res.data.product
       })
+    window.scrollTo(0, 0)
   }
 }
 </script>
