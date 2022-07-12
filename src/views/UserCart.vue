@@ -1,7 +1,7 @@
 <template>
-<div class="container text-white vh-100" style="margin-top:58px">
+<div class="container text-white h-100" style="margin-top:58px">
 <LoadingAnimation :active="loading"></LoadingAnimation>
-<div class="row justify-content-center">
+<div class="row row-cols-1 justify-content-center">
     <!-- <div class="col-md-8">
 <table class="table mt-4 text-white">
   <thead>
@@ -32,8 +32,8 @@
   </tbody>
 </table>
 </div> -->
-<div class="col-md-8" v-if="cart.carts">
-    <table class="table mt-4 text-white">
+<div class="col overflow-auto" v-if="cart.carts">
+    <table class="table mt-4 text-white text-nowrap">
   <thead>
     <tr>
       <th width="200"></th>
@@ -46,7 +46,7 @@
   <tbody>
     <tr v-for="cart in cart.carts" :key="cart.id">
       <td>
-      <img :src="cart.product.imageUrl" style="height:150px; width:200px;object-fit: cover;object-position: center;">
+      <img class="img-fluid" :src="cart.product.imageUrl" style="height:150px; width:200px;object-fit: cover;object-position: center;">
       </td>
       <td><a href="#" @click.prevent="getProduct(cart.product_id)">{{cart.product.title}}</a></td>
       <td class="text-right">
@@ -76,7 +76,7 @@
     </div>
     <hr>
     <div class="input-group">
-        <input class="form-control" value="總計：" disabled><input class="form-control" style="border-left:0px" :value=$filters.currency(cart.final_total) disabled><button class="input-group-text btn btn-outline-primary w-75" @click="createOrder">結帳</button>
+        <input class="form-control" value="總計：" disabled><input class="form-control w-25" style="border-left:0px" :value=$filters.currency(cart.final_total) disabled><button class="input-group-text btn btn-outline-primary w-50 w-lg-75" @click="createOrder">結帳</button>
     </div>
 </div>
 </div>

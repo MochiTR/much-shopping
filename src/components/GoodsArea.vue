@@ -30,9 +30,11 @@
             <!-- <div class="card-title">NoteBook A</div> -->
             <img :src="notebook.imageUrl" style="object-fit:cover;object-position:center center;height:300px;">
             <div class="card-body"><h2 class="fs-3">{{notebook.title}}</h2>
+            <h3>NT$ {{notebook.price}}</h3>
             <p>
               {{notebook.description}}<a href="#" class="text-muted" @click.prevent="getDetail(notebook.id)">...More</a><br>
-              <button type="button" class="btn btn-secondary">加入購物車</button>
+              <button type="button" class="btn btn-secondary" @click="addCart(notebook.id)" :disabled="this.status.loadingItem===notebook.id"><div class="spinner-border text-primary spinner-border-sm" role="status" v-if="this.status.loadingItem===notebook.id">
+</div>加入購物車</button>
             </p></div>
           </div>
         </div>
@@ -68,9 +70,11 @@
             <!-- <div class="card-title">NoteBook A</div> -->
             <img :src="pen.imageUrl" style="object-fit:cover;object-position:center center;height:300px;">
             <div class="card-body"><h2 class="fs-3">{{pen.title}}</h2>
+            <h3>NT$ {{pen.price}}</h3>
             <p>
               {{pen.description}}<a href="#" class="text-muted" @click.prevent="getDetail(pen.id)">...More</a><br>
-              <button type="button" class="btn btn-secondary">加入購物車</button>
+              <button type="button" class="btn btn-secondary" @click="addCart(pen.id)" :disabled="this.status.loadingItem===pen.id"><div class="spinner-border text-primary spinner-border-sm" role="status" v-if="this.status.loadingItem===pen.id">
+</div>加入購物車</button>
             </p></div>
           </div>
         </div>
@@ -92,9 +96,11 @@
             <!-- <div class="card-title">sketchbook A</div> -->
             <img :src="sketchbook.imageUrl" style="object-fit:cover;object-position:center center;height:300px;">
             <div class="card-body"><h2 class="fs-3">{{sketchbook.title}}</h2>
+            <h3>NT$ {{sketchbook.price}}</h3>
             <p>
               {{sketchbook.description}}<a href="#" class="text-muted" @click.prevent="getDetail(sketchbook.id)">...More</a><br>
-              <button type="button" class="btn btn-secondary">加入購物車</button>
+              <button type="button" class="btn btn-secondary" @click="addCart(sketchbook.id)" :disabled="this.status.loadingItem===sketchbook.id"><div class="spinner-border text-primary spinner-border-sm" role="status" v-if="this.status.loadingItem===sketchbook.id">
+</div>加入購物車</button>
             </p></div>
           </div>
         </div>
@@ -116,9 +122,11 @@
             <!-- <div class="card-title">other A</div> -->
             <img :src="other.imageUrl" style="object-fit:cover;object-position:center center;height:300px;">
             <div class="card-body"><h2 class="fs-3">{{other.title}}</h2>
+            <h3>NT$ {{other.price}}</h3>
             <p>
               {{other.description}}<a href="#" class="text-muted" @click.prevent="getDetail(other.id)">...More</a><br>
-              <button type="button" class="btn btn-secondary">加入購物車</button>
+              <button type="button" class="btn btn-secondary" @click="addCart(other.id)" :disabled="this.status.loadingItem===other.id"><div class="spinner-border text-primary spinner-border-sm" role="status" v-if="this.status.loadingItem===other.id">
+</div>加入購物車</button>
             </p></div>
           </div>
         </div>
@@ -133,7 +141,10 @@ export default {
       notebooks: {},
       pens: {},
       sketchbooks: {},
-      others: {}
+      others: {},
+      status: {
+        loadingItem: ''
+      }
     }
   },
   methods: {
@@ -167,6 +178,19 @@ export default {
     toTarget (tag) {
       const top = tag.offsetTop
       window.scrollTo(0, top)
+    },
+    addCart (id) {
+      this.status.loadingItem = id
+      const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart`
+      const cart = {
+        product_id: id,
+        qty: 1
+      }
+      this.$http.post(api, { data: cart })
+        .then((res) => {
+          console.log(res)
+          this.status.loadingItem = ''
+        })
     }
   },
   created () {
