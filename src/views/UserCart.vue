@@ -1,9 +1,9 @@
 <template>
-<div class="container">
+<div class="container text-white vh-100" style="margin-top:58px">
 <LoadingAnimation :active="loading"></LoadingAnimation>
-<div class="row">
-    <div class="col-md-8">
-<table class="table mt-4">
+<div class="row justify-content-center">
+    <!-- <div class="col-md-8">
+<table class="table mt-4 text-white">
   <thead>
     <tr>
       <th width="120">圖片</th>
@@ -31,23 +31,24 @@
     </tr>
   </tbody>
 </table>
-</div>
-<div class="col-md-4" v-if="cart.carts">
-    <table class="table mt-4">
+</div> -->
+<div class="col-md-8" v-if="cart.carts">
+    <table class="table mt-4 text-white">
   <thead>
     <tr>
+      <th width="200"></th>
+      <th width="240">品名</th>
+      <th width="150">數量</th>
+      <th width="150">單價</th>
       <th></th>
-      <th width="120">品名</th>
-      <th>數量</th>
-      <th width="120">單價</th>
     </tr>
   </thead>
   <tbody>
     <tr v-for="cart in cart.carts" :key="cart.id">
       <td>
-      <button type="button" class="btn btn-outline-danger" @click.prevent="deleteCart(cart)"><i class="bi bi-trash3-fill"></i></button>
+      <img :src="cart.product.imageUrl" style="height:150px; width:200px;object-fit: cover;object-position: center;">
       </td>
-      <td>{{cart.product.title}}</td>
+      <td><a href="#" @click.prevent="getProduct(cart.product_id)">{{cart.product.title}}</a></td>
       <td class="text-right">
           <div class="input-group input-group-sm">
                <input type="number" class="form-control" min="1" v-model.number="cart.qty" @change="updateCart(cart)" :disabled="this.status.loadingItem===cart.id">
@@ -56,6 +57,9 @@
       </td>
       <td>
        {{$filters.currency(cart.final_total)}}
+      </td>
+            <td>
+      <button type="button" class="btn btn-outline-danger" @click.prevent="deleteCart(cart)"><i class="bi bi-trash3-fill"></i></button>
       </td>
     </tr>
   </tbody>
@@ -70,9 +74,13 @@
     <div class="input-group">
         <input class="form-control" v-model="couponCode"><button class="input-group-text btn btn-outline-secondary" @click="useCoupon">使用優惠券</button>
     </div>
+    <hr>
+    <div class="input-group">
+        <input class="form-control" value="總計：" disabled><input class="form-control" style="border-left:0px" :value=$filters.currency(cart.final_total) disabled><button class="input-group-text btn btn-outline-primary w-75" @click="createOrder">結帳</button>
+    </div>
 </div>
 </div>
-<div class="my-5 row justify-content-center">
+<!-- <div class="mt-5 row justify-content-center">
       <V-Form class="col-md-6" v-slot="{ errors }"
             @submit="createOrder">
         <div class="mb-3">
@@ -120,7 +128,7 @@
           <button class="btn btn-danger">送出訂單</button>
         </div>
       </V-Form>
-    </div>
+    </div> -->
 </div>
 </template>
 
