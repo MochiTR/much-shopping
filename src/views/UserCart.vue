@@ -82,7 +82,7 @@
     </div>
     <hr>
     <div class="input-group">
-        <input class="form-control" value="總計：" disabled><input class="form-control w-25" style="border-left:0px" :value=$filters.currency(cart.final_total) disabled><button class="input-group-text btn btn-outline-primary w-50 w-lg-75" @click="createOrder">結帳</button>
+        <input class="form-control" value="總計：" disabled><input class="form-control w-25" style="border-left:0px" :value=$filters.currency(cart.final_total) disabled><button class="input-group-text btn btn-outline-primary w-50 w-lg-75" @click="openForm">結帳</button>
     </div>
 </div>
 </div>
@@ -135,11 +135,12 @@
         </div>
       </V-Form>
     </div> -->
+<orderFormModal ref="OrderModal" @emit-form="createOrder"></OrderFormModal>
 </div>
 </template>
 
 <script>
-
+import orderFormModal from '@/components/OrderFormModal'
 export default {
   data () {
     return {
@@ -163,6 +164,7 @@ export default {
     }
   },
   components: {
+    orderFormModal
   },
   inject: ['emitter'],
   methods: {
@@ -257,9 +259,11 @@ export default {
           console.log(this.couponCode)
         })
     },
-    createOrder () {
+    openForm () {
+      this.$refs.OrderModal.showModal()
+    },
+    createOrder (order) {
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/order`
-      const order = this.form
       this.$http.post(url, { data: order })
         .then((res) => {
           console.log(res)
@@ -268,6 +272,9 @@ export default {
               style: 'success',
               title: '已建立訂單'
             })
+            this.clearCart()
+            this.$refs.OrderModal.closeModal()
+            this.$router.push(`/user/checkout/${res.data.orderId}`)
           } else {
             this.emitter.emit('push-message', {
               style: 'danger',
