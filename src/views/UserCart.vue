@@ -1,5 +1,5 @@
 <template>
-<div class="container text-white" style="margin-top:58px">
+<div class="container text-white" style="margin-top:56px">
 <LoadingAnimation :active="loading"></LoadingAnimation>
 <div class="row row-cols-1 justify-content-center vh-100">
     <!-- <div class="col-md-8">
@@ -84,6 +84,10 @@
     <div class="input-group">
         <input class="form-control" value="總計：" disabled><input class="form-control w-25" style="border-left:0px" :value=$filters.currency(cart.final_total) disabled><button class="input-group-text btn btn-outline-primary w-50 w-lg-75" @click="openForm">結帳</button>
     </div>
+</div>
+<div class="col text-center mt-5" v-else>
+  <h2>購物車目前沒有商品</h2>
+  <p class="display-1" @click="toHome" style="cursor:pointer;"><span class="display-5">將商品加入購物車吧！</span><i class="bi bi-three-dots"></i><i class="bi bi-cart3"></i></p>
 </div>
 </div>
 <!-- <div class="mt-5 row justify-content-center">
@@ -190,23 +194,26 @@ export default {
           this.loading = false
           this.cart = res.data.data
           console.log(this.cart.carts)
+          if (this.cart.carts.length === 0) {
+            this.cart.carts = 0
+          }
         })
     },
-    addCart (id) {
-      console.log(id)
-      this.status.loadingItem = id
-      const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart`
-      const cart = {
-        product_id: id,
-        qty: 1
-      }
-      this.$http.post(api, { data: cart })
-        .then((res) => {
-          console.log(res)
-          this.status.loadingItem = ''
-          this.getCart()
-        })
-    },
+    // addCart (id) {
+    //   console.log(id)
+    //   this.status.loadingItem = id
+    //   const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart`
+    //   const cart = {
+    //     product_id: id,
+    //     qty: 1
+    //   }
+    //   this.$http.post(api, { data: cart })
+    //     .then((res) => {
+    //       console.log(res)
+    //       this.status.loadingItem = ''
+    //       this.getCart()
+    //     })
+    // },
     updateCart (cart) {
       this.loading = true
       this.status.loadingItem = cart.id
@@ -283,6 +290,9 @@ export default {
             })
           }
         })
+    },
+    toHome () {
+      this.$router.push('/user/index')
     }
   },
   created () {
