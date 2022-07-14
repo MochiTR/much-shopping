@@ -11,7 +11,7 @@
           <a class="nav-link active" aria-current="page" href="#" @click.prevent="toHome">◆ Home ◆</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">◆ About ◆</a>
+          <a class="nav-link" href="#" @click.prevent="toAbout">◆ About ◆</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">◆ Custom ◆</a>
@@ -40,6 +40,9 @@ export default {
     },
     toHome () {
       this.$router.push('/user/index')
+    },
+    toAbout () {
+      this.$router.push('/user/about')
     }
   }
 }

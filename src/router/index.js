@@ -45,6 +45,10 @@ const routes = [
         component: () => import('../views/UserHome.vue')
       },
       {
+        path: 'about',
+        component: () => import('../views/AboutView.vue')
+      },
+      {
         path: 'cart',
         component: () => import('../views/UserCart.vue')
       },
