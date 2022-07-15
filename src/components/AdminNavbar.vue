@@ -44,7 +44,7 @@ export default {
       this.$router.push('/dashboard/coupons')
     },
     toUser () {
-      this.$router.push('/user/index')
+      this.$router.push('/')
     }
   }
 }

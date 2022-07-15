@@ -36,19 +36,19 @@ export default {
       this.$router.push('/login')
     },
     toCart () {
-      this.$router.push('/user/cart')
+      this.$router.push('/cart')
     },
     toHome () {
-      this.$router.push('/user/index')
+      this.$router.push('/')
     },
     toAbout () {
-      this.$router.push('/user/about')
+      this.$router.push('/about')
     },
     toContact () {
-      this.$router.push('/user/contact')
+      this.$router.push('/contact')
     },
     toCustom () {
-      this.$router.push('/user/custom')
+      this.$router.push('/custom')
     }
   }
 }
