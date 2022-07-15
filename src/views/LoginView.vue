@@ -1,20 +1,7 @@
 <template>
 <div class="bg-dark vh-100 text-white">
 <div class="container vh-100 d-flex align-items-center justify-content-center">
-<!-- <form @submit.prevent="login" class="w-50">
-<fieldset>
-  <legend>Login</legend>
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Account</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" v-model="user.username" placeholder="Email...">
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" v-model="user.password" placeholder="Password...">
-  </div>
-  <button type="submit" class="btn btn-secondary">Login</button>
-  </fieldset>
-</form> -->
+<HomeNavbar></HomeNavbar>
 <V-Form class="col-md-6" v-slot="{ errors }" @submit="login">
 <fieldset>
   <legend>Login</legend>
@@ -44,7 +31,11 @@
 </template>
 
 <script>
+import HomeNavbar from '@/components/HomeNavbar.vue'
 export default {
+  components: {
+    HomeNavbar
+  },
   data () {
     return {
       user: {

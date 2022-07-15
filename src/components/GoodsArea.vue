@@ -27,7 +27,6 @@
       <div class="row row-cols-md-4 text-white">
         <div class="col py-4" v-for="notebook in notebooks" :key="notebook.id">
           <div class="card card_bg h-100">
-            <!-- <div class="card-title">NoteBook A</div> -->
             <img :src="notebook.imageUrl" style="object-fit:cover;object-position:center center;height:300px;">
             <div class="card-body"><h2 class="fs-3">{{notebook.title}}</h2>
             <h3>NT$ {{notebook.price}}</h3>
@@ -39,19 +38,6 @@
             </p>
           </div>
         </div>
-        <!-- <div class="col-2">
-          <div class="card">
-            <div class="card-title">NoteBook B</div>
-            <img src="https://images.unsplash.com/photo-1594171334348-47faf56d8501?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" style="object-fit:cover;object-position:center center;height:300px;">
-            <div class="card-body"><h2 class="fs-3">牛皮筆記本 (刻字)</h2>
-            <p>
-              商品描述<a href="#" class="text-muted">...More</a><br>
-              <button type="button" class="btn btn-primary">加入購物車</button>
-            </p></div>
-          </div>
-        </div>
-        <div class="col-3"></div>
-        <div class="col-3"></div> -->
       </div>
 </div>
 
@@ -68,7 +54,6 @@
       <div class="row row-cols-md-4 text-white">
         <div class="col py-4" v-for="pen in pens" :key="pen.id">
           <div class="card card_bg h-100">
-            <!-- <div class="card-title">NoteBook A</div> -->
             <img :src="pen.imageUrl" style="object-fit:cover;object-position:center center;height:300px;">
             <div class="card-body"><h2 class="fs-3">{{pen.title}}</h2>
             <h3>NT$ {{pen.price}}</h3>
@@ -95,7 +80,6 @@
       <div class="row row-cols-md-4 text-white">
         <div class="col py-4" v-for="sketchbook in sketchbooks" :key="sketchbook.id">
           <div class="card card_bg h-100">
-            <!-- <div class="card-title">sketchbook A</div> -->
             <img :src="sketchbook.imageUrl" style="object-fit:cover;object-position:center center;height:300px;">
             <div class="card-body"><h2 class="fs-3">{{sketchbook.title}}</h2>
             <h3>NT$ {{sketchbook.price}}</h3>
@@ -122,7 +106,6 @@
       <div class="row row-cols-md-4 text-white">
         <div class="col py-4" v-for="other in others" :key="other.id">
           <div class="card card_bg h-100">
-            <!-- <div class="card-title">other A</div> -->
             <img :src="other.imageUrl" style="object-fit:cover;object-position:center center;height:300px;">
             <div class="card-body"><h2 class="fs-3">{{other.title}}</h2>
             <h3>NT$ {{other.price}}</h3>

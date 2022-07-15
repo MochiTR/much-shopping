@@ -2,36 +2,6 @@
 <div class="container text-white" style="margin-top:56px">
 <LoadingAnimation :active="loading"></LoadingAnimation>
 <div class="row row-cols-1 justify-content-center vh-100">
-    <!-- <div class="col-md-8">
-<table class="table mt-4 text-white">
-  <thead>
-    <tr>
-      <th width="120">圖片</th>
-      <th>產品名稱</th>
-      <th width="120">價格</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr v-for="item in products" :key="item.id">
-      <td style="width:300px">
-      <div style="height:200px;background-size: cover;background-position: center;" :style="{backgroundImage:`url(${item.imageUrl})`}"></div>
-      </td>
-      <td>{{item.title}}</td>
-      <td class="text-right">
-        原價{{$filters.currency(item.origin_price)}}
-        售價{{$filters.currency(item.price)}}
-      </td>
-      <td>
-        <div class="btn-group">
-          <button class="btn btn-outline-primary btn-sm" @click="getProduct(item.id)">查看更多</button>
-          <button class="btn btn-outline-danger btn-sm" @click="addCart(item.id)" :disabled="this.status.loadingItem===item.id"><div class="spinner-border text-primary spinner-border-sm" role="status" v-if="this.status.loadingItem===item.id">
-</div>加入購物車</button>
-        </div>
-      </td>
-    </tr>
-  </tbody>
-</table>
-</div> -->
 <div class="col" v-if="cart.carts">
 <div class="overflow-auto">
     <table class="table mt-4 text-white text-nowrap">
@@ -90,55 +60,6 @@
   <p class="display-1" @click="toHome" style="cursor:pointer;"><span class="display-5">將商品加入購物車吧！</span><i class="bi bi-three-dots"></i><i class="bi bi-cart3"></i></p>
 </div>
 </div>
-<!-- <div class="mt-5 row justify-content-center">
-      <V-Form class="col-md-6" v-slot="{ errors }"
-            @submit="createOrder">
-        <div class="mb-3">
-          <label for="email" class="form-label">Email</label>
-          <V-Field id="email" name="email" type="email" class="form-control"
-                   :class="{ 'is-invalid': errors['email'] }"
-                   placeholder="請輸入 Email" rules="email|required"
-                   v-model="form.user.email"></V-Field>
-          <ErrorMessage name="email" class="invalid-feedback"></ErrorMessage>
-        </div>
-
-        <div class="mb-3">
-          <label for="name" class="form-label">收件人姓名</label>
-          <V-Field id="name" name="姓名" type="text" class="form-control"
-                   :class="{ 'is-invalid': errors['姓名'] }"
-                   placeholder="請輸入姓名" rules="required"
-                   v-model="form.user.name"></V-Field>
-          <ErrorMessage name="姓名" class="invalid-feedback"></ErrorMessage>
-        </div>
-
-        <div class="mb-3">
-          <label for="tel" class="form-label">收件人電話</label>
-          <V-Field id="tel" name="電話" type="tel" class="form-control"
-                   :class="{ 'is-invalid': errors['電話'] }"
-                   placeholder="請輸入電話" rules="required"
-                   v-model="form.user.tel"></V-Field>
-          <ErrorMessage name="電話" class="invalid-feedback"></ErrorMessage>
-        </div>
-
-        <div class="mb-3">
-          <label for="address" class="form-label">收件人地址</label>
-          <V-Field id="address" name="地址" type="text" class="form-control"
-                   :class="{ 'is-invalid': errors['地址'] }"
-                   placeholder="請輸入地址" rules="required"
-                   v-model="form.user.address"></V-Field>
-          <ErrorMessage name="地址" class="invalid-feedback"></ErrorMessage>
-        </div>
-
-        <div class="mb-3">
-          <label for="message" class="form-label">留言</label>
-          <textarea name="" id="message" class="form-control" cols="30" rows="10"
-                    v-model="form.message"></textarea>
-        </div>
-        <div class="text-end">
-          <button class="btn btn-danger">送出訂單</button>
-        </div>
-      </V-Form>
-    </div> -->
 <orderFormModal ref="OrderModal" @emit-form="createOrder"></OrderFormModal>
 </div>
 </template>
@@ -199,21 +120,6 @@ export default {
           }
         })
     },
-    // addCart (id) {
-    //   console.log(id)
-    //   this.status.loadingItem = id
-    //   const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart`
-    //   const cart = {
-    //     product_id: id,
-    //     qty: 1
-    //   }
-    //   this.$http.post(api, { data: cart })
-    //     .then((res) => {
-    //       console.log(res)
-    //       this.status.loadingItem = ''
-    //       this.getCart()
-    //     })
-    // },
     updateCart (cart) {
       this.loading = true
       this.status.loadingItem = cart.id
