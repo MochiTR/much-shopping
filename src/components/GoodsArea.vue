@@ -173,7 +173,7 @@ export default {
         })
     },
     getDetail (id) {
-      this.$router.push(`/user/product/${id}`)
+      this.$router.push(`/product/${id}`)
     },
     toTarget (tag) {
       const top = tag.offsetTop

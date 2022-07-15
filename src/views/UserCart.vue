@@ -184,7 +184,7 @@ export default {
         })
     },
     getProduct (id) {
-      this.$router.push(`/user/product/${id}`)
+      this.$router.push(`/product/${id}`)
     },
     getCart () {
       this.loading = true
@@ -281,7 +281,7 @@ export default {
             })
             this.clearCart()
             this.$refs.OrderModal.closeModal()
-            this.$router.push(`/user/checkout/${res.data.orderId}`)
+            this.$router.push(`/checkout/${res.data.orderId}`)
           } else {
             this.emitter.emit('push-message', {
               style: 'danger',
@@ -292,7 +292,7 @@ export default {
         })
     },
     toHome () {
-      this.$router.push('/user/index')
+      this.$router.push('/')
     }
   },
   created () {
