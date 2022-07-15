@@ -103,26 +103,44 @@ export default {
     updateCoupon (tempCoupon) {
       if (this.isNew) {
         const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/coupon`
-        this.$http.post(url, { data: tempCoupon }).then((response) => {
-          console.log(response, tempCoupon)
-          this.emitter.emit('push-message', {
-            style: 'success',
-            title: '已新增優待券'
+        this.$http.post(url, { data: tempCoupon })
+          .then((response) => {
+            if (response.data.success) {
+              this.emitter.emit('push-message', {
+                style: 'success',
+                title: '已新增優待券'
+              })
+              this.getCoupons()
+              this.$refs.couponModal.closeModal()
+            } else {
+              this.$refs.couponModal.closeModal()
+              this.emitter.emit('push-message', {
+                style: 'danger',
+                title: '新增錯誤',
+                content: response.data.message
+              })
+            }
           })
-          this.getCoupons()
-          this.$refs.couponModal.closeModal()
-        })
       } else {
         const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/coupon/${this.tempCoupon.id}`
-        this.$http.put(url, { data: this.tempCoupon }).then((response) => {
-          console.log(response)
-          this.emitter.emit('push-message', {
-            style: 'success',
-            title: '優待券資料更新'
+        this.$http.put(url, { data: this.tempCoupon })
+          .then((response) => {
+            if (response.data.success) {
+              this.emitter.emit('push-message', {
+                style: 'success',
+                title: '優待券資料更新'
+              })
+              this.getCoupons()
+              this.$refs.couponModal.closeModal()
+            } else {
+              this.$refs.couponModal.closeModal()
+              this.emitter.emit('push-message', {
+                style: 'danger',
+                title: '更新失敗',
+                content: response.data.message
+              })
+            }
           })
-          this.getCoupons()
-          this.$refs.couponModal.closeModal()
-        })
       }
     }
   },

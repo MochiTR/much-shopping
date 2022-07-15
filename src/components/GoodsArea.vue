@@ -26,16 +26,17 @@
       </nav>
       <div class="row row-cols-md-4 text-white">
         <div class="col py-4" v-for="notebook in notebooks" :key="notebook.id">
-          <div class="card card_bg">
+          <div class="card card_bg h-100">
             <!-- <div class="card-title">NoteBook A</div> -->
             <img :src="notebook.imageUrl" style="object-fit:cover;object-position:center center;height:300px;">
             <div class="card-body"><h2 class="fs-3">{{notebook.title}}</h2>
             <h3>NT$ {{notebook.price}}</h3>
-            <p>
+            </div>
+            <p class="mt-auto card-footer">
               {{notebook.description}}<a href="#" class="text-muted" @click.prevent="getDetail(notebook.id)">...More</a><br>
               <button type="button" class="btn btn-secondary" @click="addCart(notebook.id)" :disabled="this.status.loadingItem===notebook.id"><div class="spinner-border text-primary spinner-border-sm" role="status" v-if="this.status.loadingItem===notebook.id">
 </div>加入購物車</button>
-            </p></div>
+            </p>
           </div>
         </div>
         <!-- <div class="col-2">
@@ -66,16 +67,17 @@
 
       <div class="row row-cols-md-4 text-white">
         <div class="col py-4" v-for="pen in pens" :key="pen.id">
-          <div class="card card_bg">
+          <div class="card card_bg h-100">
             <!-- <div class="card-title">NoteBook A</div> -->
             <img :src="pen.imageUrl" style="object-fit:cover;object-position:center center;height:300px;">
             <div class="card-body"><h2 class="fs-3">{{pen.title}}</h2>
             <h3>NT$ {{pen.price}}</h3>
-            <p>
+            </div>
+            <p class="mt-auto card-footer">
               {{pen.description}}<a href="#" class="text-muted" @click.prevent="getDetail(pen.id)">...More</a><br>
               <button type="button" class="btn btn-secondary" @click="addCart(pen.id)" :disabled="this.status.loadingItem===pen.id"><div class="spinner-border text-primary spinner-border-sm" role="status" v-if="this.status.loadingItem===pen.id">
 </div>加入購物車</button>
-            </p></div>
+            </p>
           </div>
         </div>
         </div>
@@ -92,16 +94,17 @@
       </nav>
       <div class="row row-cols-md-4 text-white">
         <div class="col py-4" v-for="sketchbook in sketchbooks" :key="sketchbook.id">
-          <div class="card card_bg">
+          <div class="card card_bg h-100">
             <!-- <div class="card-title">sketchbook A</div> -->
             <img :src="sketchbook.imageUrl" style="object-fit:cover;object-position:center center;height:300px;">
             <div class="card-body"><h2 class="fs-3">{{sketchbook.title}}</h2>
             <h3>NT$ {{sketchbook.price}}</h3>
-            <p>
+           </div>
+            <p class="mt-auto card-footer">
               {{sketchbook.description}}<a href="#" class="text-muted" @click.prevent="getDetail(sketchbook.id)">...More</a><br>
               <button type="button" class="btn btn-secondary" @click="addCart(sketchbook.id)" :disabled="this.status.loadingItem===sketchbook.id"><div class="spinner-border text-primary spinner-border-sm" role="status" v-if="this.status.loadingItem===sketchbook.id">
 </div>加入購物車</button>
-            </p></div>
+            </p>
           </div>
         </div>
         </div>
@@ -118,16 +121,17 @@
       </nav>
       <div class="row row-cols-md-4 text-white">
         <div class="col py-4" v-for="other in others" :key="other.id">
-          <div class="card card_bg">
+          <div class="card card_bg h-100">
             <!-- <div class="card-title">other A</div> -->
             <img :src="other.imageUrl" style="object-fit:cover;object-position:center center;height:300px;">
             <div class="card-body"><h2 class="fs-3">{{other.title}}</h2>
             <h3>NT$ {{other.price}}</h3>
-            <p>
+            </div>
+            <p class="mt-auto card-footer">
               {{other.description}}<a href="#" class="text-muted" @click.prevent="getDetail(other.id)">...More</a><br>
               <button type="button" class="btn btn-secondary" @click="addCart(other.id)" :disabled="this.status.loadingItem===other.id"><div class="spinner-border text-primary spinner-border-sm" role="status" v-if="this.status.loadingItem===other.id">
 </div>加入購物車</button>
-            </p></div>
+            </p>
           </div>
         </div>
         </div>

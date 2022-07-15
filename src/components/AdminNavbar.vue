@@ -5,7 +5,7 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="collapse navbar-collapse" id="navbarNav" ref="collapse">
       <ul class="navbar-nav w-100">
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" href="#" @click.prevent="toHome">◆ Home ◆</a>
@@ -26,7 +26,13 @@
 </template>
 
 <script>
+import Collapse from 'bootstrap/js/dist/collapse'
 export default {
+  data () {
+    return {
+      collapse: ''
+    }
+  },
   methods: {
     logout () {
       const api = `${process.env.VUE_APP_API}logout`
@@ -46,6 +52,14 @@ export default {
     toUser () {
       this.$router.push('/')
     }
+  },
+  mounted () {
+    const collapseElementList = [].slice.call(document.querySelectorAll('.collapse'))
+    this.collpase = collapseElementList.map(function (collapseEl) {
+      return new Collapse(collapseEl, {
+        toggle: false
+      })
+    })
   }
 }
 </script>

@@ -30,7 +30,13 @@
 </template>
 
 <script>
+import Collapse from 'bootstrap/js/dist/collapse'
 export default {
+  data () {
+    return {
+      collapse: ''
+    }
+  },
   methods: {
     toLogin () {
       this.$router.push('/login')
@@ -50,6 +56,14 @@ export default {
     toCustom () {
       this.$router.push('/custom')
     }
+  },
+  mounted () {
+    const collapseElementList = [].slice.call(document.querySelectorAll('.collapse'))
+    this.collpase = collapseElementList.map(function (collapseEl) {
+      return new Collapse(collapseEl, {
+        toggle: false
+      })
+    })
   }
 }
 </script>

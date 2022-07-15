@@ -4,7 +4,8 @@
     <div class="text-end">
         <button class="btn btn-secondary" @click="openModal">新增</button>
     </div>
-<table class="table mt-4 text-white">
+    <div class="overflow-auto">
+<table class="table mt-4 text-white text-nowrap">
   <thead>
     <tr>
       <th width="120">分類</th>
@@ -18,20 +19,20 @@
   </thead>
   <tbody>
     <tr v-for="item in products" :key="item.id">
-      <td>{{item.category}}</td>
-      <td>{{item.title}}</td>
-      <td><img :src="item.imageUrl" class="img-fluid" style="min-width:200px;height:200px;"></td>
-      <td class="text-right">
+      <td class="align-middle">{{item.category}}</td>
+      <td class="align-middle">{{item.title}}</td>
+      <td class="align-middle"><img :src="item.imageUrl" class="img-fluid" style="min-width:200px;max-width:200px;height:200px;object-fit:cover;object-position: center center;"></td>
+      <td class="text-right align-middle">
         {{$filters.currency(item.origin_price)}}
       </td>
-      <td class="text-right">
+      <td class="text-right align-middle">
         {{$filters.currency(item.price)}}
       </td>
-      <td>
+      <td class="align-middle">
         <span class="text-success" v-if="item.is_enabled">啟用</span>
         <span class="text-muted" v-else>未啟用</span>
       </td>
-      <td>
+      <td class="align-middle">
         <div class="btn-group">
           <button class="btn btn-outline-secondary btn-sm" @click="editProduct(item)">編輯</button>
           <button class="btn btn-outline-danger btn-sm" @click="deleteProduct(item)">刪除</button>
@@ -40,6 +41,7 @@
     </tr>
   </tbody>
 </table>
+</div>
   <PaginationComponent :pages="pagination" @emit-pages="getProduct"></PaginationComponent>
 <product-modal ref="ProductModal" @emit-product="updateProduct" v-bind:product="temp"></product-modal>
 </div>
