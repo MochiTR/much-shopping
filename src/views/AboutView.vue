@@ -1,7 +1,7 @@
 <template>
   <div class="about h-100 position-relative" style="margin-top:58px;z-index:1;background-image:urL('https://images.unsplash.com/photo-1462206092226-f46025ffe607?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2074&q=80');background-attachment: fixed;background-size: cover;background-position: top center;">
       <div style="opacity:0.4; background:black; z-index:-1" class="position-absolute h-100 w-100"></div>
-      <div class="text-center py-5">
+      <div class="container text-center py-5">
     <h1 class="text-white">About Us</h1>
     <h2>Much</h2>
     <p>創建於2000年</p>

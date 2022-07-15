@@ -1,5 +1,5 @@
 <template>
-<div class="vh-100" style="margin-top:56px;">
+<div class="container vh-100" style="margin-top:56px;">
 <h1 class="text-white text-center">Contact Us</h1>
 <V-Form action="" class="text-white my-6 d-flex justify-content-center align-items-center" v-slot="{ errors }">
     <div class="row row-cols-1 row-cols-md-2 flex-row-reverse g-3 w-75 ">
@@ -21,7 +21,7 @@
             <ErrorMessage name="message" class="invalid-feedback"></ErrorMessage>
         </div>
             </div>
-                <button type="submit" class="btn btn-secondary mt-3">送出</button>
+                <button type="submit" class="btn btn-secondary mt-3 w-100">送出</button>
         </div>
         <div class="col">
             <iframe style="border:0;width:100%;height:100%;" loading="lazy" allowfullscreen

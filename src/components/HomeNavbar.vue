@@ -14,7 +14,7 @@
           <a class="nav-link" href="#" @click.prevent="toAbout">◆ About ◆</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" @click.prevent="toCustom">◆ Custom ◆</a>
+          <a class="nav-link" href="#" @click.prevent="toCustom">◆ Customize ◆</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#" @click.prevent="toContact">◆ Contact ◆</a>
@@ -46,6 +46,9 @@ export default {
     },
     toContact () {
       this.$router.push('/user/contact')
+    },
+    toCustom () {
+      this.$router.push('/user/custom')
     }
   }
 }

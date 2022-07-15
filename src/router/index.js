@@ -53,6 +53,10 @@ const routes = [
         component: () => import('../views/ContactView.vue')
       },
       {
+        path: 'custom',
+        component: () => import('../views/CustomView.vue')
+      },
+      {
         path: 'cart',
         component: () => import('../views/UserCart.vue')
       },
