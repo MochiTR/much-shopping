@@ -14,10 +14,10 @@
           <a class="nav-link" href="#" @click.prevent="toAbout">◆ About ◆</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">◆ Custom ◆</a>
+          <a class="nav-link" href="#" @click.prevent="toCustom">◆ Custom ◆</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">◆ Contact ◆</a>
+          <a class="nav-link" href="#" @click.prevent="toContact">◆ Contact ◆</a>
         </li>
         <li class="nav-item ms-auto d-flex align-items-center">
           <a class="nav-link" href="#" @click.prevent="toLogin">◆ Login ◆</a>
@@ -43,6 +43,9 @@ export default {
     },
     toAbout () {
       this.$router.push('/user/about')
+    },
+    toContact () {
+      this.$router.push('/user/contact')
     }
   }
 }
