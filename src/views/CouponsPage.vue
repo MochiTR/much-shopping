@@ -93,11 +93,19 @@ export default {
     },
     getCoupons () {
       this.loading = true
+      const here = this
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/coupons`
       this.$http.get(url, this.tempProduct).then((response) => {
-        this.coupons = response.data.coupons
-        this.loading = false
-        console.log(response)
+        if (response.data.success) {
+          response.data.coupons.forEach((item) => {
+            const nowTime = new Date().getTime() / 1000
+            if (item.due_date < nowTime) {
+              here.deleteCoupon(item)
+            }
+          })
+          this.coupons = response.data.coupons
+          this.loading = false
+        }
       })
     },
     updateCoupon (tempCoupon) {
