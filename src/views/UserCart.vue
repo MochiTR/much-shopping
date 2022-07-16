@@ -1,7 +1,7 @@
 <template>
-<div class="container text-white" style="margin-top:56px">
+<div class="container text-white pb-5" style="margin-top:56px">
 <LoadingAnimation :active="loading"></LoadingAnimation>
-<div class="row row-cols-1 justify-content-center vh-100">
+<div class="row row-cols-1 justify-content-center h-100" style="min-height:100vh">
 <div class="col" v-if="cart.carts">
 <div class="overflow-auto">
     <table class="table mt-4 text-white text-nowrap">
