@@ -11,13 +11,13 @@
           <a class="nav-link active" aria-current="page" href="#" @click.prevent="toHome">◆ Home ◆</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#" @click.prevent="toAbout">◆ About ◆</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" href="#" @click.prevent="toCustom">◆ Customize ◆</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#" @click.prevent="toContact">◆ Contact ◆</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#" @click.prevent="toAbout">◆ About ◆</a>
         </li>
         <li class="nav-item ms-auto d-flex align-items-center">
           <a class="nav-link" href="#" @click.prevent="toLogin">◆ Admin Login ◆</a>

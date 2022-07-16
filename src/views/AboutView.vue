@@ -5,7 +5,7 @@
     <h1 class="text-white">About Us</h1>
     <h2>Much</h2>
     <p>創建於2000年</p>
-    <p>主要販售項目為筆記本、鋼筆、其他文具等，也有專為顧客打造量身訂做的客製化服務，讓你的文具充滿個人風格！</p>
+    <p class="text-white">主要販售項目為筆記本、鋼筆、其他文具等，也有專為顧客打造量身訂做的客製化服務，讓你的文具充滿個人風格！</p>
     <div class="timeline position-relative my-6">
     <div class="row justify-content-center justify-content-lg-start my-4 my-lg-0">
       <div class="col-8 col-lg-4">

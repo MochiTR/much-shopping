@@ -11,8 +11,8 @@
 <div class="col-4 mt-5">
     <p class="fs-3">{{product.title}}</p><br>
     <p class="fs-4">{{product.content}}</p>
-    <p class="text-muted text-decoration-line-through">售價<br>NT$ {{product.origin_price}}<br></p>
-    <p class="fs-4">特價<br>NT$ {{product.price}}</p>
+    <p class="text-muted text-decoration-line-through">售價<br>NT$ {{$filters.currency(product.origin_price)}}<br></p>
+    <p class="fs-4">特價<br>NT$ {{$filters.currency(product.price)}}</p>
     <hr>
     <select class="form-select form-select-lg mb-3 me-3" aria-label=".form-select-lg example" v-model="quantity">
       <option selected disabled value="0">請選擇數量</option>

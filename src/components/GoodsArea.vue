@@ -29,7 +29,7 @@
           <div class="card card_bg h-100">
             <img :src="notebook.imageUrl" style="object-fit:cover;object-position:center center;height:300px;">
             <div class="card-body"><h2 class="fs-3">{{notebook.title}}</h2>
-            <h3>NT$ {{notebook.price}}</h3>
+            <h3>NT$ {{$filters.currency(notebook.price)}}</h3>
             </div>
             <p class="mt-auto card-footer">
               {{notebook.description}}<a href="#" class="text-muted" @click.prevent="getDetail(notebook.id)">...More</a><br>
@@ -56,7 +56,7 @@
           <div class="card card_bg h-100">
             <img :src="pen.imageUrl" style="object-fit:cover;object-position:center center;height:300px;">
             <div class="card-body"><h2 class="fs-3">{{pen.title}}</h2>
-            <h3>NT$ {{pen.price}}</h3>
+            <h3>NT$ {{$filters.currency(pen.price)}}</h3>
             </div>
             <p class="mt-auto card-footer">
               {{pen.description}}<a href="#" class="text-muted" @click.prevent="getDetail(pen.id)">...More</a><br>
@@ -82,7 +82,7 @@
           <div class="card card_bg h-100">
             <img :src="sketchbook.imageUrl" style="object-fit:cover;object-position:center center;height:300px;">
             <div class="card-body"><h2 class="fs-3">{{sketchbook.title}}</h2>
-            <h3>NT$ {{sketchbook.price}}</h3>
+            <h3>NT$ {{$filters.currency(sketchbook.price)}}</h3>
            </div>
             <p class="mt-auto card-footer">
               {{sketchbook.description}}<a href="#" class="text-muted" @click.prevent="getDetail(sketchbook.id)">...More</a><br>
@@ -108,7 +108,7 @@
           <div class="card card_bg h-100">
             <img :src="other.imageUrl" style="object-fit:cover;object-position:center center;height:300px;">
             <div class="card-body"><h2 class="fs-3">{{other.title}}</h2>
-            <h3>NT$ {{other.price}}</h3>
+            <h3>NT$ {{$filters.currency(other.price)}}</h3>
             </div>
             <p class="mt-auto card-footer">
               {{other.description}}<a href="#" class="text-muted" @click.prevent="getDetail(other.id)">...More</a><br>

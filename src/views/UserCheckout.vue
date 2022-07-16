@@ -3,21 +3,21 @@
   <form class="col-md-6" @submit.prevent="payOrder" style="margin-top:58px">
     <table class="table align-middle text-white">
       <thead>
-      <th>品名</th>
-      <th>數量</th>
-      <th>單價</th>
+      <th class="ps-2">品名</th>
+      <th class="ps-2">數量</th>
+      <th class="text-end pe-2">單價</th>
       </thead>
       <tbody>
       <tr v-for="item in order.products" :key="item.id">
         <td>{{item.product.title}}</td>
         <td>{{item.qty}}個/{{item.product.unit}}</td>
-        <td class="text-end">{{item.final_total}}</td>
+        <td class="text-end">{{$filters.currency(item.final_total)}}</td>
       </tr>
       </tbody>
       <tfoot>
       <tr>
         <td colspan="2" class="text-end">總計</td>
-        <td class="text-end">{{order.total}}</td>
+        <td class="text-end">{{$filters.currency(order.total)}}</td>
       </tr>
       </tfoot>
     </table>
