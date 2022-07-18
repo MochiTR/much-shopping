@@ -39,6 +39,7 @@
 import HomeNavbar from '../components/HomeNavbar'
 import emitter from '@/methods/emitter'
 import toastList from '@/components/ToastList.vue'
+import aos from '@/methods/aos'
 export default {
   components: {
     toastList,
@@ -59,7 +60,8 @@ export default {
   },
   provide () {
     return {
-      emitter
+      emitter,
+      aos
     }
   },
   mounted () {

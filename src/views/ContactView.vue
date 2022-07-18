@@ -1,7 +1,8 @@
 <template>
-<div class="container vh-100" style="margin-top:56px;">
-<h1 class="text-white text-center">Contact Us</h1>
-<V-Form action="" class="text-white my-6 d-flex justify-content-center align-items-center" v-slot="{ errors }">
+<div class="container vh-100 py-5" style="margin-top:56px;">
+<h1 class="text-white text-center" data-aos="fade-down">Contact Us</h1>
+<h2 class="text-white text-center mt-5" data-aos="fade-down">聯絡我們</h2>
+<V-Form action="" class="text-white my-6 d-flex justify-content-center align-items-center" v-slot="{ errors }" data-aos="zoom-in-up" data-aos-duration="800">
     <div class="row row-cols-1 row-cols-md-2 flex-row-reverse g-3 w-75 ">
         <div class="col">
             <div class="row g-3">
@@ -33,6 +34,9 @@ src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJJXNJjQqpQjQR-UfWt
 </template>
 
 <script>
+import aos from 'aos'
+import 'aos/dist/aos.css'
+aos.init()
 export default {
   data () {
     return {

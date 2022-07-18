@@ -1,5 +1,5 @@
 <template>
-<div class="mb-3 text-center">
+<div class="mb-3 text-center" data-aos="fade-up" data-aos-duration="1000">
   <div class="row py-4 row-cols-md-4 gy-4">
     <div class="col">
       <button class="btn btn-primary btn_anchor w-100 w-md-75 py-3" @click.prevent="toTarget($refs.NoteBook)">NoteBooks</button>
@@ -15,7 +15,7 @@
       </div>
   </div>
 </div>
-<div id="NoteBook" ref="NoteBook">
+<div id="NoteBook" ref="NoteBook" data-aos="fade-up" data-aos-delay="1000" data-aos-duration="2000">
 <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item active" aria-current="page">NoteBook</li>
@@ -41,7 +41,7 @@
       </div>
 </div>
 
-<div id="Pen" ref="Pen">
+<div id="Pen" ref="Pen" data-aos="fade-up" data-aos-delay="1000" data-aos-duration="2000">
 <nav aria-label="breadcrumb">
         <ol class="breadcrumb mt-3">
           <li class="breadcrumb-item"><a href="#" @click.prevent="toTarget($refs.NoteBook)" class="text-white text-decoration-none">NoteBook</a></li>
@@ -68,7 +68,7 @@
         </div>
 </div>
 
-<div id="SketchBook" ref="SketchBook">
+<div id="SketchBook" ref="SketchBook" data-aos="fade-up" data-aos-delay="300" data-aos-duration="2000">
 <nav aria-label="breadcrumb">
         <ol class="breadcrumb mt-3">
           <li class="breadcrumb-item"><a href="#" @click.prevent="toTarget($refs.NoteBook)" class="text-white text-decoration-none">NoteBook</a></li>
@@ -94,7 +94,7 @@
         </div>
 </div>
 
-<div id="Other" ref="Other" class="pb-4">
+<div id="Other" ref="Other" class="pb-4" data-aos="fade-up" data-aos-delay="300" data-aos-duration="2000">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb mt-3">
           <li class="breadcrumb-item"><a href="#" @click.prevent="toTarget($refs.NoteBook)" class="text-white text-decoration-none">NoteBook</a></li>

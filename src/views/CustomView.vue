@@ -1,10 +1,12 @@
 <template>
 <div style="margin-top:56px;" class="text-white"></div>
-<h1 class="text-white text-center">Customize Step</h1>
 <div class="container py-5">
-<h2 class="text-white text-center mb-4">客製流程</h2>
-<div class="row row-cols-md-5 text-white justify-content-evenly gy-4">
-    <div class="col-md-2 d-flex align-items-center flex-column">
+<h1 class="text-white text-center" data-aos="fade-down">Customize Step</h1>
+<h2 class="text-white text-center mb-4  mt-5" data-aos="fade-down">客製流程</h2>
+<div class="row row-cols-md-5 text-white justify-content-evenly gy-4" data-aos-delay="300">
+    <div class="col-md-2 d-flex align-items-center flex-column" data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="1000">
         <div class="bg-secondary" style="max-width:200px;">
         <img src="https://static.thenounproject.com/png/101952-200.png" class="img-fluid">
         </div>
@@ -13,7 +15,9 @@
         <p>下單前在商品備註寫上規格<br>(ex:文字樣式、大小)</p>
         </div>
     </div>
-    <div class="col-md-2 d-flex align-items-center flex-column">
+    <div class="col-md-2 d-flex align-items-center flex-column" data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="1000" data-aos-delay="500">
         <div class="bg-secondary" style="max-width:200px;">
         <img src="https://static.thenounproject.com/png/35247-200.png" class="img-fluid">
         </div>
@@ -22,7 +26,9 @@
         <p>確認收到訂單並初步設計</p>
         </div>
     </div>
-    <div class="col-md-2 d-flex align-items-center flex-column">
+    <div class="col-md-2 d-flex align-items-center flex-column" data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="1000" data-aos-delay="700">
         <div class="bg-secondary" style="max-width:200px;">
         <img src="https://static.thenounproject.com/png/1054184-200.png" class="img-fluid">
         </div>
@@ -31,7 +37,9 @@
         <p>提供設計與顧客討論是否需要更改</p>
         </div>
     </div>
-    <div class="col-md-2 d-flex align-items-center flex-column">
+    <div class="col-md-2 d-flex align-items-center flex-column" data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="1000" data-aos-delay="900">
         <div class="bg-secondary" style="max-width:200px;">
         <img src="https://icons.veryicon.com/png/o/education-technology/daily-stationery-icon/pen-40.png" class="img-fluid">
         </div>
@@ -40,7 +48,9 @@
         <p>與顧客討論完成後開始製作</p>
         </div>
     </div>
-    <div class="col-md-2 d-flex align-items-center flex-column">
+    <div class="col-md-2 d-flex align-items-center flex-column" data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="1000" data-aos-delay="1100">
         <div class="bg-secondary" style="max-width:200px;">
         <img src="https://cdn-icons-png.flaticon.com/512/2928/2928550.png" class="img-fluid">
         </div>
@@ -52,8 +62,8 @@
 </div>
 </div>
 <div class="container py-5">
-<h2 class="text-white text-center mb-4">如果有其他客製商品需求</h2>
-<V-Form action="" class="text-white" v-slot="{ errors }">
+<h2 class="text-white text-center mb-4" data-aos="fade-down" data-aos-duration="2000">如果有其他客製商品需求</h2>
+<V-Form action="" class="text-white" v-slot="{ errors }" data-aos="fade-down" data-aos-duration="2000" data-aos-delay="500">
     <div class="row row-cols-1 row-cols-md-2 g-3 justify-content-center align-items-center">
             <div class="row g-3">
         <div class="col-md-6">
