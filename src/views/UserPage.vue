@@ -67,15 +67,12 @@ export default {
   },
   watch: {
     scrollY: function (newV, oldV) {
-      if (newV > 733) {
+      if (newV > 500) {
         this.$refs.toTopBtn.classList.add('showTopBtn')
       } else {
         this.$refs.toTopBtn.classList.remove('showTopBtn')
       }
     }
-  },
-  created () {
-    console.log('t', this.scrollY)
   }
 }
 </script>

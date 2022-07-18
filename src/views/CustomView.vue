@@ -5,7 +5,7 @@
 <h2 class="text-white text-center mb-4">客製流程</h2>
 <div class="row row-cols-md-5 text-white justify-content-evenly gy-4">
     <div class="col-md-2 d-flex align-items-center flex-column">
-        <div class="bg-secondary rounded-circle" style="max-width:200px;">
+        <div class="bg-secondary" style="max-width:200px;">
         <img src="https://static.thenounproject.com/png/101952-200.png" class="img-fluid">
         </div>
         <div class="text-center mt-3">
@@ -14,8 +14,8 @@
         </div>
     </div>
     <div class="col-md-2 d-flex align-items-center flex-column">
-        <div class="bg-secondary rounded-circle" style="max-width:200px;">
-        <img src="https://icon-library.com/images/35247-200_12765.png" class="img-fluid">
+        <div class="bg-secondary" style="max-width:200px;">
+        <img src="https://static.thenounproject.com/png/35247-200.png" class="img-fluid">
         </div>
         <div class="text-center mt-3">
         <h3>設計</h3>
@@ -23,7 +23,7 @@
         </div>
     </div>
     <div class="col-md-2 d-flex align-items-center flex-column">
-        <div class="bg-secondary rounded-circle" style="max-width:200px;">
+        <div class="bg-secondary" style="max-width:200px;">
         <img src="https://static.thenounproject.com/png/1054184-200.png" class="img-fluid">
         </div>
         <div class="text-center mt-3">
@@ -32,7 +32,7 @@
         </div>
     </div>
     <div class="col-md-2 d-flex align-items-center flex-column">
-        <div class="bg-secondary rounded-circle" style="max-width:200px;">
+        <div class="bg-secondary" style="max-width:200px;">
         <img src="https://icons.veryicon.com/png/o/education-technology/daily-stationery-icon/pen-40.png" class="img-fluid">
         </div>
         <div class="text-center mt-3">
@@ -41,7 +41,7 @@
         </div>
     </div>
     <div class="col-md-2 d-flex align-items-center flex-column">
-        <div class="bg-secondary rounded-circle" style="max-width:200px;">
+        <div class="bg-secondary" style="max-width:200px;">
         <img src="https://cdn-icons-png.flaticon.com/512/2928/2928550.png" class="img-fluid">
         </div>
         <div class="text-center mt-3">

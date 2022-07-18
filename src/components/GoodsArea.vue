@@ -32,7 +32,7 @@
             <h3>NT$ {{$filters.currency(notebook.price)}}</h3>
             </div>
             <p class="mt-auto card-footer">
-              {{notebook.description}}<a href="#" class="text-muted" @click.prevent="getDetail(notebook.id)">...More</a><br>
+              {{notebook.description}}<a href="#" class="text-white" @click.prevent="getDetail(notebook.id)">...More</a><br>
               <button type="button" class="btn btn-secondary" @click="addCart(notebook.id)" :disabled="this.status.loadingItem===notebook.id"><div class="spinner-border text-primary spinner-border-sm" role="status" v-if="this.status.loadingItem===notebook.id">
 </div>加入購物車</button>
             </p>
@@ -59,7 +59,7 @@
             <h3>NT$ {{$filters.currency(pen.price)}}</h3>
             </div>
             <p class="mt-auto card-footer">
-              {{pen.description}}<a href="#" class="text-muted" @click.prevent="getDetail(pen.id)">...More</a><br>
+              {{pen.description}}<a href="#" class="text-white" @click.prevent="getDetail(pen.id)">...More</a><br>
               <button type="button" class="btn btn-secondary" @click="addCart(pen.id)" :disabled="this.status.loadingItem===pen.id"><div class="spinner-border text-primary spinner-border-sm" role="status" v-if="this.status.loadingItem===pen.id">
 </div>加入購物車</button>
             </p>
@@ -85,7 +85,7 @@
             <h3>NT$ {{$filters.currency(sketchbook.price)}}</h3>
            </div>
             <p class="mt-auto card-footer">
-              {{sketchbook.description}}<a href="#" class="text-muted" @click.prevent="getDetail(sketchbook.id)">...More</a><br>
+              {{sketchbook.description}}<a href="#" class="text-white" @click.prevent="getDetail(sketchbook.id)">...More</a><br>
               <button type="button" class="btn btn-secondary" @click="addCart(sketchbook.id)" :disabled="this.status.loadingItem===sketchbook.id"><div class="spinner-border text-primary spinner-border-sm" role="status" v-if="this.status.loadingItem===sketchbook.id">
 </div>加入購物車</button>
             </p>
@@ -111,7 +111,7 @@
             <h3>NT$ {{$filters.currency(other.price)}}</h3>
             </div>
             <p class="mt-auto card-footer">
-              {{other.description}}<a href="#" class="text-muted" @click.prevent="getDetail(other.id)">...More</a><br>
+              {{other.description}}<a href="#" class="text-white" @click.prevent="getDetail(other.id)">...More</a><br>
               <button type="button" class="btn btn-secondary" @click="addCart(other.id)" :disabled="this.status.loadingItem===other.id"><div class="spinner-border text-primary spinner-border-sm" role="status" v-if="this.status.loadingItem===other.id">
 </div>加入購物車</button>
             </p>
