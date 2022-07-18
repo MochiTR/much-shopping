@@ -33,7 +33,7 @@
             </div>
             <p class="mt-auto card-footer">
               {{notebook.description}}<a href="#" class="text-white" @click.prevent="getDetail(notebook.id)">...More</a><br>
-              <button type="button" class="btn btn-secondary" @click="addCart(notebook.id)" :disabled="this.status.loadingItem===notebook.id"><div class="spinner-border text-primary spinner-border-sm" role="status" v-if="this.status.loadingItem===notebook.id">
+              <button type="button" class="btn btn-secondary" @click="openModal(notebook.id)" :disabled="this.status.loadingItem===notebook.id"><div class="spinner-border text-primary spinner-border-sm" role="status" v-if="this.status.loadingItem===notebook.id">
 </div>加入購物車</button>
             </p>
           </div>
@@ -60,7 +60,7 @@
             </div>
             <p class="mt-auto card-footer">
               {{pen.description}}<a href="#" class="text-white" @click.prevent="getDetail(pen.id)">...More</a><br>
-              <button type="button" class="btn btn-secondary" @click="addCart(pen.id)" :disabled="this.status.loadingItem===pen.id"><div class="spinner-border text-primary spinner-border-sm" role="status" v-if="this.status.loadingItem===pen.id">
+              <button type="button" class="btn btn-secondary" @click="openModal(pen.id)" :disabled="this.status.loadingItem===pen.id"><div class="spinner-border text-primary spinner-border-sm" role="status" v-if="this.status.loadingItem===pen.id">
 </div>加入購物車</button>
             </p>
           </div>
@@ -86,7 +86,7 @@
            </div>
             <p class="mt-auto card-footer">
               {{sketchbook.description}}<a href="#" class="text-white" @click.prevent="getDetail(sketchbook.id)">...More</a><br>
-              <button type="button" class="btn btn-secondary" @click="addCart(sketchbook.id)" :disabled="this.status.loadingItem===sketchbook.id"><div class="spinner-border text-primary spinner-border-sm" role="status" v-if="this.status.loadingItem===sketchbook.id">
+              <button type="button" class="btn btn-secondary" @click="openModal(sketchbook.id)" :disabled="this.status.loadingItem===sketchbook.id"><div class="spinner-border text-primary spinner-border-sm" role="status" v-if="this.status.loadingItem===sketchbook.id">
 </div>加入購物車</button>
             </p>
           </div>
@@ -112,17 +112,22 @@
             </div>
             <p class="mt-auto card-footer">
               {{other.description}}<a href="#" class="text-white" @click.prevent="getDetail(other.id)">...More</a><br>
-              <button type="button" class="btn btn-secondary" @click="addCart(other.id)" :disabled="this.status.loadingItem===other.id"><div class="spinner-border text-primary spinner-border-sm" role="status" v-if="this.status.loadingItem===other.id">
+              <button type="button" class="btn btn-secondary" @click="openModal(other.id)" :disabled="this.status.loadingItem===other.id"><div class="spinner-border text-primary spinner-border-sm" role="status" v-if="this.status.loadingItem===other.id">
 </div>加入購物車</button>
             </p>
           </div>
         </div>
         </div>
         </div>
+        <ConfirmModal ref="callModal" @emit-addCart="addCart" :pId="productId"></ConfirmModal>
 </template>
 
 <script>
+import ConfirmModal from '../components/ConfirmModal.vue'
 export default {
+  components: {
+    ConfirmModal
+  },
   data () {
     return {
       notebooks: {},
@@ -131,8 +136,12 @@ export default {
       others: {},
       status: {
         loadingItem: ''
-      }
+      },
+      productId: ''
     }
+  },
+  props: {
+
   },
   methods: {
     getProduct () {
@@ -167,6 +176,7 @@ export default {
       window.scrollTo(0, top - 56)
     },
     addCart (id) {
+      this.$refs.callModal.closeModal()
       this.status.loadingItem = id
       const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart`
       const cart = {
@@ -178,6 +188,10 @@ export default {
           console.log(res)
           this.status.loadingItem = ''
         })
+    },
+    openModal (id) {
+      this.$refs.callModal.showModal()
+      this.productId = id
     }
   },
   created () {
