@@ -91,6 +91,7 @@ export default {
     this.orderId = this.$route.params.orderId
     console.log(this.orderId)
     this.getOrder()
+    window.scrollTo(0, 0)
   }
 }
 </script>

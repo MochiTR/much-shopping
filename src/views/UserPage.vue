@@ -2,7 +2,7 @@
 <div class="container-fluid bg-dark">
      <HomeNavbar></HomeNavbar>
   <toastList></toastList>
-  <button @click.prevent="toTop" style="width:50px;height:50px;position:fixed;bottom:50px;right:50px" class="bg-dark border-white"><i class="bi bi-arrow-up-short fs-2 text-white"></i></button>
+  <button @click.prevent="toTop" class="toTopBtn" ref="toTopBtn"><i class="bi bi-arrow-up-short fs-2"></i></button>
 <router-view></router-view>
 </div>
  <footer class="p-4 bg-dark text-white">
@@ -44,15 +44,38 @@ export default {
     toastList,
     HomeNavbar
   },
+  data () {
+    return {
+      scrollY: window.scrollY
+    }
+  },
   methods: {
     toTop () {
       window.scrollTo(0, 0)
+    },
+    changeY () {
+      this.scrollY = window.scrollY
     }
   },
   provide () {
     return {
       emitter
     }
+  },
+  mounted () {
+    window.addEventListener('scroll', this.changeY)
+  },
+  watch: {
+    scrollY: function (newV, oldV) {
+      if (newV > 733) {
+        this.$refs.toTopBtn.classList.add('showTopBtn')
+      } else {
+        this.$refs.toTopBtn.classList.remove('showTopBtn')
+      }
+    }
+  },
+  created () {
+    console.log('t', this.scrollY)
   }
 }
 </script>

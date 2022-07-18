@@ -40,6 +40,9 @@ export default {
       name: '',
       textarea: ''
     }
+  },
+  created () {
+    window.scrollTo(0, 0)
   }
 }
 </script>

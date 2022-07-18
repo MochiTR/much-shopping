@@ -2,7 +2,9 @@
 <div class="bg-dark h-100">
 <navbar></navbar>
 <toastList></toastList>
+  <button @click.prevent="toTop" class="toTopBtn"><i class="bi bi-arrow-up-short fs-2"></i></button>
 <router-view></router-view>
+
 </div>
  <footer class="p-4 bg-dark text-white">
             <div class="container mb-5">
@@ -47,6 +49,11 @@ export default {
   provide () {
     return {
       emitter
+    }
+  },
+  methods: {
+    toTop () {
+      window.scrollTo(0, 0)
     }
   },
   created () {
