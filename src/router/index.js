@@ -51,6 +51,7 @@ const routes = [
     children: [
       {
         path: '',
+        name: 'index',
         component: () => import('../views/UserHome.vue'),
         meta: {
           title: 'Much | 首頁'

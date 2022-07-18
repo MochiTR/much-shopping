@@ -50,7 +50,7 @@ export default {
   },
   mounted () {
     this.carousel = new Carousel(this.$refs.carousel, {
-      interval: 3000
+      interval: 5000
     })
   }
 }

@@ -1,5 +1,5 @@
 <template>
-<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" refs="marquee">
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" ref="marquee">
   <div class="carousel-inner text-white">
     <div class="carousel-item active">
       <p><span class="badge bg-secondary">！最新消息！</span>  首次客製文具享8折，優待碼:2022First</p>
@@ -26,7 +26,7 @@ export default {
   },
   mounted () {
     this.marquee = new Carousel(this.$refs.marquee, {
-      interval: 1000
+      interval: 3000
     })
   }
 }
