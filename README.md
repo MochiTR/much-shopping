@@ -7,10 +7,6 @@
 一般使用者:瀏覽商品、使用折價券、購物車操作、下單
 管理員:商品管理(新增、刪除、內容變更、啟用)、折價券管理(新增、刪除、內容變更、啟用)
 
-## 功能
-
-依照地區，顯示出該地區的YouBike站點以及資訊(目前剩幾輛車、有幾個空位…)，並使用google map來根據經緯度顯示地圖
-
 ## Demo
 [Github Page](https://mochitr.github.io/much-shopping/#/)
 ![much-shopping](https://imgur.com/Bhr1Gcu.png)
